@@ -1,4 +1,9 @@
 # Scripts should be run as root/sudo
+if [ -z "$2" ]; then
+    echo "Script should be passed the user and group required"
+    exit 1
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     userdir=/Users/$1
 else
